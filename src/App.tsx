@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { ProductCard } from "./components";
+import { ProductCard } from "components";
 
 function App() {
   interface MSWRes {
