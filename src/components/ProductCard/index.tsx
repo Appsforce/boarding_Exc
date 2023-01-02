@@ -3,24 +3,22 @@ import React from "react";
 interface ProductCardProps {
   name: string;
   brand: string;
-  productImage?: { url: string };
+  image?: string;
   price: number;
-  id: string;
 }
 
 export const ProductCard = ({
   name,
   brand,
   price,
-  id,
-  productImage,
+  image,
 }: ProductCardProps) => {
   return (
-    <div key={id}>
+    <div>
       <p>{name}</p>
       <p>{brand}</p>
       <p>{price}$</p>
-      {productImage && <p>{productImage.url}</p>}
+      <img src={image} />
     </div>
   );
 };

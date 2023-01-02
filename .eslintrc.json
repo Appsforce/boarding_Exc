@@ -23,7 +23,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "cypress", "import"],
+  "plugins": ["react", "@typescript-eslint", "cypress"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unnecessary-type-constraint": "off",
