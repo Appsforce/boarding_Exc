@@ -8,7 +8,7 @@ function App() {
       <ProductCard
         name="test"
         brand="nike"
-        id={123}
+        id={"123"}
         price={200}
         product_image={{ url: "https:/asd" }}
       />
