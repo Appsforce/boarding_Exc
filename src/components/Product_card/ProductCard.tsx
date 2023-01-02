@@ -8,22 +8,18 @@ interface ProductCard_props {
   id: number;
 }
 
-const ProductCard = ({
+export const ProductCard = ({
   name,
   brand,
   price,
   id,
   product_image,
 }: ProductCard_props) => {
-  return (
-    <div className="card_cont">
-      <p>{name}</p>
-      <p>{brand}</p>
-      <p>{price}$</p>
-      <p>{id}</p>
-      {product_image && <p>{product_image.url}</p>}
-    </div>
-  );
+  <div className="card_cont">
+    <p>{name}</p>
+    <p>{brand}</p>
+    <p>{price}$</p>
+    <p>{id}</p>
+    {product_image && <p>{product_image.url}</p>}
+  </div>;
 };
-
-export default ProductCard;
