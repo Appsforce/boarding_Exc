@@ -10,7 +10,7 @@ function App() {
         brand="nike"
         id={"123"}
         price={200}
-        product_image={{ url: "https:/asd" }}
+        productImage={{ url: "https:/asd" }}
       />
     </div>
   );
