@@ -10,13 +10,6 @@ function App() {
     price: number;
     id: string;
   }
-  const [MockRes, setData] = useState<Array<MSWRes> | null>(null);
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("/products/all").then((res) => res.json());
-      setData(res);
-    })();
-  }, []);
   return (
     <div className="App">
       {MockRes &&
