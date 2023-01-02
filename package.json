@@ -62,11 +62,11 @@
     "typescript": "^4.9.4"
   },
   "lint-staged": {
-    "*.tsx": [
+    "*.{ts,tsx}": [
       "npm run lint",
       "npm run format"
     ],
-    "*.test.tsx": [
+    "*.{test.tsx,test.ts}": [
       "npm run test:ci"
     ],
     "*.+(json|css|md)": [
