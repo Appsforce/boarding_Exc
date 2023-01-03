@@ -1,8 +1,10 @@
+export type Brand = "Nike" | "Adidas";
+
 export interface Product {
   id: string;
   name: string;
-  brand: string;
-  image?: string;
+  brand: Brand;
+  image: string;
   price: number;
 }
 
