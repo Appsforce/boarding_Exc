@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { ProductCard } from "components";
+import { Product } from "shared/models";
 
 function App() {
-  interface MSWRes {
-    name: string;
-    brand: string;
-    image?: string;
-    price: number;
-    id: string;
-  }
+  const [MockRes, setData] = useState<Product[]>([]);
+  setData([]);
   return (
     <div className="App">
-      {MockRes &&
-        MockRes.map((item) => (
-          <ProductCard
-            key={item.id}
-            name={item.name}
-            brand={item.brand}
-            price={item.price}
-            image={item.image}
-          />
-        ))}
+      {MockRes.map((item) => (
+        <ProductCard key={item.id} product={item} />
+      ))}
     </div>
   );
 }
