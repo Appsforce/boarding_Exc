@@ -1,4 +1,4 @@
-export type Brand = "Nike" | "Adidas";
+import { Brand } from "shared/models";
 
 export interface Product {
   id: string;
