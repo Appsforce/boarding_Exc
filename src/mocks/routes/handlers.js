@@ -1,8 +1,9 @@
 import { rest } from "msw";
-import { Products } from "../data";
+import { productController } from "mocks/controllers";
 
 export const handlers = [
-  rest.get("/products/all", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(Products));
-  }),
+  rest.get("/products/all", productController.getAll),
+  rest.delete("/products/delete", productController.deleteProduct),
+  rest.put("/products/edit", productController.editProduct),
+  rest.post("/products/add", productController.addProduct),
 ];
