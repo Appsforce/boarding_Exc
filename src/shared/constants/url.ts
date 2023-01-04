@@ -1,7 +1,7 @@
 export const getAPIUrls = (id?: string) => ({
   product: {
     getAll: "/products",
-    add: "/products",
+    create: "/products",
     edit: `/product/${id}`,
     delete: `/product/${id}`,
   },

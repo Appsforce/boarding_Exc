@@ -5,10 +5,8 @@ class ProductService {
   getAllProducts() {
     return Products;
   }
-  editProductsList(editDetails: Product) {
-    const selectedProduct = Products.find(
-      (product) => editDetails.id === product.id
-    );
+  editProductsList(editDetails: Product, id: string) {
+    const selectedProduct = Products.find((product) => id === product.id);
     if (!selectedProduct) {
       throw new Error("No product found");
     }
@@ -16,9 +14,8 @@ class ProductService {
     return selectedProduct;
   }
   deleteProduct(id: string) {
-    const oldArrayLength = Products.length;
-    Products.filter((product) => product.id !== id);
-    if (Products.length < oldArrayLength) {
+    const foundProduct = Products.find((product) => product.id !== id);
+    if (foundProduct) {
       return true;
     } else {
       throw new Error("No product found");

@@ -20,31 +20,29 @@ export class productController {
     }
   }
   static async editProduct(
-    req: RestRequest<Product>,
+    req: RestRequest<Product, { id: string }>,
     res: ResponseFunction<Product | Error | any>,
     ctx: RestContext
   ) {
     try {
+      const id = req.params.id.toString();
       const reqData: Product = await req.json();
       return res(
         ctx.status(200),
-        ctx.json(ProductService.editProductsList(reqData))
+        ctx.json(ProductService.editProductsList(reqData, id))
       );
     } catch (err: any) {
       res(ctx.status(400), ctx.json({ message: err.message }));
     }
   }
   static async deleteProduct(
-    req: RestRequest<{ id: string }>,
+    req: RestRequest<string>,
     res: ResponseFunction<boolean | Error>,
     ctx: RestContext
   ) {
     try {
-      const reqBody = await req.json();
-      return res(
-        ctx.status(200),
-        ctx.json(ProductService.deleteProduct(reqBody.id))
-      );
+      const id = req.params["id"].toString();
+      return res(ctx.status(200), ctx.json(ProductService.deleteProduct(id)));
     } catch (err: any) {
       res(ctx.status(400), ctx.json({ message: err.message }));
     }
