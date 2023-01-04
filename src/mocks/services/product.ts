@@ -6,29 +6,30 @@ class ProductService {
     return Products;
   }
   editProductsList(editDetails: Product) {
-    let choosenProduct: Product | undefined = Products.find(
+    const selectedProduct = Products.find(
       (product) => editDetails.id === product.id
     );
-    if (!choosenProduct) {
+    if (!selectedProduct) {
       throw new Error("No product found");
     }
-    Object.assign(choosenProduct, editDetails);
-    return choosenProduct;
+    Object.assign(selectedProduct, editDetails);
+    return selectedProduct;
   }
   deleteProduct(id: string) {
-    const newProducts = Products.filter((product) => product.id !== id);
-    if (newProducts.length < Products.length) {
+    const oldArrayLength = Products.length;
+    Products.filter((product) => product.id !== id);
+    if (Products.length < oldArrayLength) {
       return true;
     } else {
       throw new Error("No product found");
     }
   }
   addProduct(product: CreateProduct) {
-    let new_product = {
+    const newProduct = {
       ...product,
       id: Math.floor(Math.random() * 10000).toString(),
     };
-    return new_product;
+    return newProduct;
   }
 }
 export default new ProductService();
