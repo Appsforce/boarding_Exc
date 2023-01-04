@@ -1,17 +1,24 @@
 import React from "react";
-import { Product } from "shared/models";
 
-interface Props {
-  product: Product;
+interface ProductCardProps {
+  name: string;
+  brand: string;
+  image?: string;
+  price: number;
 }
 
-export const ProductCard = ({ product }: Props) => {
+export const ProductCard = ({
+  name,
+  brand,
+  price,
+  image,
+}: ProductCardProps) => {
   return (
     <div>
-      <p>{product.name}</p>
-      <p>{product.brand}</p>
-      <p>{product.price}$</p>
-      <img src={product.image} />
+      <p>{name}</p>
+      <p>{brand}</p>
+      <p>{price}$</p>
+      <img src={image} />
     </div>
   );
 };
